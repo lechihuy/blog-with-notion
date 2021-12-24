@@ -863,14 +863,7 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
     padding: 0;
 }
 
-.prose-lg :is(:where(a):not(:where([class~="not-prose"] *))){
-  --tw-text-opacity: 1;
-  color: rgb(2 132 199 / var(--tw-text-opacity));
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-}
-
-.prose-lg :is(:where(code):not(:where([class~="not-prose"] *))){
+.prose-lg :not(pre) > code{
   display: inline-block;
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
@@ -883,6 +876,18 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
+.prose-lg :is(:where(a):not(:where([class~="not-prose"] *))){
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.prose-lg :is(:where(pre):not(:where([class~="not-prose"] *))){
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .prose-lg :is(:where(img):not(:where([class~="not-prose"] *))){
@@ -958,16 +963,20 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   margin-top: -1px;
 }
 
-.mb-7{
-  margin-bottom: 1.75rem;
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
+.mb-2{
+  margin-bottom: 0.5rem;
 }
 
 .mt-7{
   margin-top: 1.75rem;
 }
 
-.mb-10{
-  margin-bottom: 2.5rem;
+.mb-7{
+  margin-bottom: 1.75rem;
 }
 
 .mb-5{
@@ -988,10 +997,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .mt-3{
   margin-top: 0.75rem;
-}
-
-.mb-2{
-  margin-bottom: 0.5rem;
 }
 
 .block{
