@@ -13,9 +13,6 @@ module.exports = {
 
   theme: {
     extend: {
-      screens: {
-        xs: '460px',
-      },
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
         logo: ["'Niconne'", 'cursive']

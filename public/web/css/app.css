@@ -614,13 +614,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   width: 100%;
 }
 
-@media (min-width: 460px){
-
-  .container{
-    max-width: 460px;
-  }
-}
-
 @media (min-width: 640px){
 
   .container{
@@ -763,6 +756,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .mt-3{
   margin-top: 0.75rem;
+}
+
+.mt-5{
+  margin-top: 1.25rem;
 }
 
 .block{
@@ -1058,10 +1055,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .font-bold{
   font-weight: 700;
-}
-
-.font-extrabold{
-  font-weight: 800;
 }
 
 .uppercase{

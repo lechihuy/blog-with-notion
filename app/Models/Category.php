@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -11,7 +12,7 @@ class Category extends Model
 
     public function getSlugAttribute()
     {
-        return Str::slug($this->title);
+        return Str::slug($this->title).'-'.$this->attributes['id'];
     }
 
     public function getTitleAttribute()

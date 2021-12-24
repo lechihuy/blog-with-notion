@@ -14,7 +14,7 @@ class Post extends Model
 
     public function getSlugAttribute()
     {
-        return Str::slug($this->title);
+        return Str::slug($this->title).'-'.$this->attributes['id'];
     }
 
     public function getTitleAttribute()

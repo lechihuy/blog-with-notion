@@ -27,11 +27,11 @@ class SearchForPostJob
      */
     public function handle(NotionClient $client)
     {
-        $res = $client->database(config('notion.databases.posts'))
+        $response = $client->database(config('notion.databases.posts.id'))
             ->query($this->query);
 
-        $res['results'] = collect($res['results'])->mapInto(Post::class)->all();
+        $response['results'] = collect($response['results'])->mapInto(Post::class)->all();
 
-        return $res;
+        return $response;
     }
 }
