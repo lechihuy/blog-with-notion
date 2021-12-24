@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+
+@tailwind base;
+
+body {
+    @apply text-gray-700;
+}
+
+/* Torchlight */
+pre {
+    @apply my-4 rounded overflow-x-auto text-xs;
+}
+
+pre code.torchlight {
+    @apply block py-4 min-w-max;
+}
+
+pre code.torchlight .line {
+    @apply px-4;
+}
+
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+    @apply mr-4;
+}
+
+/* /Torchlight */
+
+@tailwind components;
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+    padding: 0;
+}
+
+@tailwind utilities;
