@@ -19,7 +19,11 @@ class Text
      */
     public static function parse(array $block): string
     {
-        $markdown = Arr::get($block, 'text.content');
+        if ($block['href']) {
+            $markdown = Link::parse($block);
+        } else {
+            $markdown = Arr::get($block, 'text.content');
+        }
 
         return (new Pipeline(app()))->send($markdown)->through(array_filter([
             Arr::get($block, 'annotations.bold') ? Bold::class : null,

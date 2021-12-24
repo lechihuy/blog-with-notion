@@ -30,8 +30,12 @@ pre code.torchlight .summary-caret {
 
 @tailwind components;
 
-.prose :where(pre):not(:where([class~="not-prose"] *)) {
+.prose-lg :where(pre):not(:where([class~="not-prose"] *)) {
     padding: 0;
+}
+
+.prose-lg {
+    @apply prose-a:text-sky-600 prose-a:underline
 }
 
 @tailwind utilities;

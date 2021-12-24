@@ -15,7 +15,7 @@ class RespondWithViewJob
      */
     public function __construct(
         protected $view, 
-        protected $data = null
+        protected $data = []
     ) {
         //
     }

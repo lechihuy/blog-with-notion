@@ -1,7 +1,7 @@
 <article class="overflow-hidden bg-white rounded-lg shadow-lg">
     {{-- Thumbnail --}}
     @if ($post->thumbnail)
-        <a href="" class="block">
+        <a href="{{ route('web.detail', ['slug' => $post->slug]) }}" class="block">
             <img 
                 src="{{ $post->thumbnail }}" 
                 alt="{{ $post->title }}"

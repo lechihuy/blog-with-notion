@@ -4,7 +4,7 @@ namespace App\Foundation\Notion\Parser\Block;
 
 use Illuminate\Support\Arr;
 
-class Paragraph
+class Heading2
 {
     /**
      * Parse the block to markdown.
@@ -16,10 +16,10 @@ class Paragraph
     {
         $markdown = '';
 
-        foreach (Arr::get($block, 'paragraph.text') as $block) {
+        foreach (Arr::get($block, 'heading_2.text') as $block) {
             $markdown .= Text::parse($block);
         }
         
-        return $markdown.PHP_EOL.PHP_EOL;
+        return '## '.$markdown.PHP_EOL.PHP_EOL;
     }
 }

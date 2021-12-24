@@ -2,7 +2,6 @@
 
 namespace App\Services\Web\Features;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Domains\Notion\Jobs\FindPageByIdJob;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -31,8 +30,12 @@ class ShowDetailPage
     {
         $pageId = ExtractUUIDFromSlugJob::dispatchSync($this->slug);
 
-        $page = FindPageByIdJob::dispatchSync($pageId);
-
-        dump($page);
+        $model = FindPageByIdJob::dispatchSync($pageId);
+        $lowerModelName = strtolower(class_basename($model::class));
+        
+        return RespondWithViewJob::dispatchSync(
+            'web::detail.'.$lowerModelName,
+            [$lowerModelName => $model]
+        );
     }
 }

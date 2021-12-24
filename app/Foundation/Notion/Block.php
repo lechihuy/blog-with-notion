@@ -52,9 +52,9 @@ class Block
     /**
      * Get all chilren of block with given block ID.
      * 
-     * @return Illuminate\Http\Client\Response
+     * @return array
      */
-    public function children(): Response
+    public function children(): array
     {
         $url = $this->client->endpoint("/blocks/{$this->blockId}/children");
 

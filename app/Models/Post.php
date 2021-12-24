@@ -7,10 +7,13 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use App\Domains\Image\Jobs\CacheImageWithUrlJob;
 use App\Domains\Category\Jobs\FindCategoryByIdJob;
+use App\Domains\Notion\Jobs\GetPageHtmlContentJob;
 
 class Post extends Model
 {
     protected $guarded = [];  
+
+    protected $keyType = 'string';
 
     public function getSlugAttribute()
     {
@@ -40,5 +43,10 @@ class Post extends Model
         return new Category(FindCategoryByIdJob::dispatchSync(
             Arr::get($this->attributes, 'properties.category.relation.0.id')
         ));
+    }
+
+    public function getContentAttribute()
+    {
+        return GetPageHtmlContentJob::dispatchSync($this->id);
     }
 }

@@ -8,7 +8,7 @@
 
     <link href="{{ mix('web/css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-slate-50">
+<body class="text-base bg-slate-50">
     <div class="container px-4 py-10 w-[calc(theme(space.96)*2)] mx-auto max-w-full">
         @include('web::layouts.header')
     

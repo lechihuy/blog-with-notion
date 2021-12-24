@@ -6,6 +6,9 @@ use Illuminate\Support\Arr;
 use League\CommonMark\MarkdownConverter;
 use App\Foundation\Notion\Parser\Block\Code;
 use App\Foundation\Notion\Parser\Block\Image;
+use App\Foundation\Notion\Parser\Block\Heading1;
+use App\Foundation\Notion\Parser\Block\Heading2;
+use App\Foundation\Notion\Parser\Block\Heading3;
 use App\Foundation\Notion\Parser\Block\Paragraph;
 
 class Parser
@@ -32,6 +35,9 @@ class Parser
                 'paragraph' => Paragraph::parse($block),
                 'code' => Code::parse($block),
                 'image' => Image::parse($block),
+                'heading_1' => Heading1::parse($block),
+                'heading_2' => Heading2::parse($block),
+                'heading_3' => Heading3::parse($block),
                 default => null,
             };
         }
