@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use App\Foundation\Notion\Parser\Parser;
 use App\Domains\Image\Jobs\CacheImageWithUrlJob;
 use App\Domains\Category\Jobs\FindCategoryByIdJob;
-use App\Domains\Notion\Jobs\GetPageHtmlContentJob;
+use App\Operations\GetCachedPageHtmlContentOperation;
+use App\Domains\Notion\Jobs\GetPageMarkdownContentJob;
 
 class Post extends Model
 {
@@ -47,6 +49,6 @@ class Post extends Model
 
     public function getContentAttribute()
     {
-        return GetPageHtmlContentJob::dispatchSync($this->id);
+        return GetCachedPageHtmlContentOperation::dispatchSync($this->id);
     }
 }

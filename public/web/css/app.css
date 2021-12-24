@@ -870,6 +870,25 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
           text-decoration-line: underline;
 }
 
+.prose-lg :is(:where(code):not(:where([class~="not-prose"] *))){
+  display: inline-block;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
+.prose-lg :is(:where(img):not(:where([class~="not-prose"] *))){
+  border-radius: 0.5rem;
+}
+
 .fixed{
   position: fixed;
 }

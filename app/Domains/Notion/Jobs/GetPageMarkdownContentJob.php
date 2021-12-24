@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Foundation\Notion\Parser\Parser;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class GetPageHtmlContentJob
+class GetPageMarkdownContentJob
 {
     use Dispatchable;
 
@@ -31,6 +31,6 @@ class GetPageHtmlContentJob
     {
         $response = $client->block(Str::remove('-', $this->id))->children();
 
-        return Parser::toHtml($response['results']);
+        return Parser::toMarkdown($response['results']);
     }
 }

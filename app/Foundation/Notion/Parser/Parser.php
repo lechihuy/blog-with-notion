@@ -77,4 +77,17 @@ class Parser
     {
         return $this->markdown;
     }
+
+    /**
+     * Convert the markdown content to HTML format.
+     * 
+     * @param  array  $blocks
+     * @return void
+     */
+    public static function markdownToHtml($content)
+    {
+        return app(MarkdownConverter::class)
+            ->convertToHtml($content)
+            ->getContent();
+    }
 }

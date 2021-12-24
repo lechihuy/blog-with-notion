@@ -19,5 +19,7 @@ class Image
         $url = Arr::get($block, 'image.file.url');
 
         return "![{$caption}]($url)".PHP_EOL;
+
+        // return "<figure><img src=\"{$url}\" alt=\"{$caption}\"><figcaption>{$caption}</figcaption></figure>".PHP_EOL;
     }
 }
