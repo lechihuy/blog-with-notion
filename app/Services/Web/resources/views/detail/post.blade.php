@@ -9,7 +9,20 @@
     <div class="p-4 sm:p-5 md:p-7">
         <div class="mb-10">
             <h1 class="mb-2 text-4xl font-bold">{{ $post->title }}</h1>
-            <time class="block mt-2 text-sm text-gray-500">{{ Carbon\Carbon::create($post->created_at) }}</time>
+
+            <div class="flex items-center gap-2 mt-2">
+                {{-- Category --}}
+                <a href="{{ route('web.detail', ['slug' => $post->category()->slug]) }}" class="text-gray-500">
+                    {{ $post->category()->title }}
+                </a>
+                
+                <span class="text-gray-300">&bull;</span>
+
+                {{-- Time --}}
+                <time class="text-sm text-gray-500">
+                    {{ Carbon\Carbon::create($post->created_at) }}
+                </time>
+            </div>
         </div>
         
         <div class="max-w-full prose-lg">
