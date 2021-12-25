@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>lechihuy</title>
 
-    <link href="{{ mix('web/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('web/css/app.css') }}" rel="stylesheet" />
+    <link rel="icon" href="{{ asset('images/lechihuy.png') }}" type="image/x-icon" />
 </head>
 <body class="text-base bg-slate-50">
     @include('web::layouts.header')

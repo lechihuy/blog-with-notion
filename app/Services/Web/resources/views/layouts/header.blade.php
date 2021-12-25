@@ -10,7 +10,9 @@ $categories = App\Domains\Category\Jobs\SearchForCategoryJob::dispatchSync([
 @endphp
 
 <header class="container px-4 pt-10 pb-5 w-[calc(theme(space.96)*2)] mx-auto max-w-full">
-    <h1 class="mb-10 text-5xl text-center font-logo">lechihuy</h1>
+    <h1 class="flex items-center justify-center mb-10 text-5xl font-logo">
+        <img src="{{ asset('images/lechihuy.png') }}" alt="lechihuy" class="w-16 mr-5"> lechihuy
+    </h1>
 
     <nav class="relative flex items-center text-xl">
         {{-- Menu Bar --}}
