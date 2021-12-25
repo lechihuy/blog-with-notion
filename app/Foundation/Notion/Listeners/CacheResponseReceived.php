@@ -25,6 +25,10 @@ class CacheResponseReceived
      */
     public function handle(ResponseReceived $event)
     {
-        Cache::forever($event->request->url(), $event->response->json());
+        $requestData = $event->request->data() ?? [];
+        $url = $event->request->url();
+        $cacheKey = count($requestData) ? $url.'|'.json_encode($requestData) : $url; 
+
+        Cache::forever($cacheKey, $event->response->json());
     }
 }

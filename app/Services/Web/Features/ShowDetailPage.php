@@ -32,10 +32,12 @@ class ShowDetailPage
 
         $model = FindPageByIdJob::dispatchSync($pageId);
         $lowerModelName = strtolower(class_basename($model::class));
-        
+
+        $data = [$lowerModelName => $model];
+
         return RespondWithViewJob::dispatchSync(
             'web::detail.'.$lowerModelName,
-            [$lowerModelName => $model]
+            $data
         );
     }
 }

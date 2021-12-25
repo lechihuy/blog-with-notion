@@ -1398,6 +1398,11 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   color: rgb(14 165 233 / var(--tw-text-opacity));
 }
 
+.text-rose-500{
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
 .underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;

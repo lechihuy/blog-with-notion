@@ -59,8 +59,9 @@ class Database
     {
         $request = $this->client->makeRequest();
         $url = $this->client->endpoint("/databases/{$this->databaseId}/query");
-        
-        if ($cache = Cache::get($url))
+        $cacheKey = count($data) ? $url.'|'.json_encode($data) : $url;
+
+        if ($cache = Cache::get($cacheKey))
             return $cache;
 
         if (count($data) == 0) 
