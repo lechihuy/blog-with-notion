@@ -1,3 +1,14 @@
+@php
+$categories = App\Domains\Category\Jobs\SearchForCategoryJob::dispatchSync([
+    "filter" => [
+        "property" => 'published',
+        "checkbox" => [
+            'equals' => true
+        ]
+    ],
+])['results']
+@endphp
+
 <header class="container px-4 pt-10 pb-5 w-[calc(theme(space.96)*2)] mx-auto max-w-full">
     <h1 class="mb-10 text-5xl text-center font-logo">lechihuy</h1>
 
@@ -10,8 +21,12 @@
         {{-- Links --}}
         <div class="items-center hidden gap-10 md:flex">
             <a href="{{ route('web.home') }}" class="flex-none font-semibold text-sky-500">Home</a>
-            <a href="" class="flex-none font-semibold text-gray-500">Lập trình</a>
-            <a href="" class="flex-none font-semibold text-gray-500">Cheatsheet</a>
+            {{-- <a href="" class="flex-none font-semibold text-gray-500">Lập trình</a> --}}
+            @foreach ($categories as $category)
+                <a href="{{ route('web.detail', ['slug' => $category->slug]) }}" class="flex-none font-semibold text-gray-500">
+                    {{ $category->title }}
+                </a>
+            @endforeach
         </div>
 
         {{-- Search --}}
