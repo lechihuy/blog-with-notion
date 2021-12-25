@@ -975,8 +975,8 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   margin-top: 1.75rem;
 }
 
-.mb-7{
-  margin-bottom: 1.75rem;
+.ml-auto{
+  margin-left: auto;
 }
 
 .mb-5{
@@ -985,10 +985,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .mb-0{
   margin-bottom: 0px;
-}
-
-.ml-auto{
-  margin-left: auto;
 }
 
 .mr-3{
@@ -1083,8 +1079,16 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   flex: 1 1 0%;
 }
 
+.flex-none{
+  flex: none;
+}
+
 .cursor-default{
   cursor: default;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .grid-cols-1{
@@ -1117,6 +1121,14 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .gap-10{
   gap: 2.5rem;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
+.overflow-auto{
+  overflow: auto;
 }
 
 .overflow-hidden{
@@ -1197,6 +1209,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   padding: 1.5rem;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
 .p-7{
   padding: 1.75rem;
 }
@@ -1214,11 +1230,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.py-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .py-4{
@@ -1241,8 +1252,21 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   padding-bottom: 0.25rem;
 }
 
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pt-8{
   padding-top: 2rem;
+}
+
+.pt-10{
+  padding-top: 2.5rem;
+}
+
+.pb-5{
+  padding-bottom: 1.25rem;
 }
 
 .pt-0{
@@ -1282,14 +1306,19 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   line-height: 2rem;
 }
 
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
 }
 
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-medium{
@@ -1306,6 +1335,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .uppercase{
   text-transform: uppercase;
+}
+
+.italic{
+  font-style: italic;
 }
 
 .leading-5{
@@ -1353,6 +1386,11 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 .text-gray-900{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-rose-700{
+  --tw-text-opacity: 1;
+  color: rgb(190 18 60 / var(--tw-text-opacity));
 }
 
 .text-sky-500{
@@ -1543,6 +1581,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
     border-radius: 0.5rem;
   }
 
+  .sm\:p-5{
+    padding: 1.25rem;
+  }
+
   .sm\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1563,8 +1605,24 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 @media (min-width: 768px){
 
+  .md\:inline-block{
+    display: inline-block;
+  }
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:rounded-lg{
+    border-radius: 0.5rem;
   }
 
   .md\:border-t-0{
@@ -1573,6 +1631,15 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
   .md\:border-l{
     border-left-width: 1px;
+  }
+
+  .md\:p-7{
+    padding: 1.75rem;
+  }
+
+  .md\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

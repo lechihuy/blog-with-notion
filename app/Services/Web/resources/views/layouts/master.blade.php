@@ -9,10 +9,16 @@
     <link href="{{ mix('web/css/app.css') }}" rel="stylesheet">
 </head>
 <body class="text-base bg-slate-50">
-    <div class="container px-4 py-10 w-[calc(theme(space.96)*2)] mx-auto max-w-full">
-        @include('web::layouts.header')
-    
+    @include('web::layouts.header')
+
+    <div class="{{
+        $viewName !== 'web::detail.post'
+            ? 'container px-4 w-[calc(theme(space.96)*2)] mx-auto max-w-full'
+            : 'container md:px-4 w-[calc(theme(space.96)*2)] mx-auto max-w-full'
+    }}">
         @yield('content')
     </div>
+
+    @include('web::layouts.footer')
 </body>
 </html>

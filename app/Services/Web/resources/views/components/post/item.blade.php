@@ -20,9 +20,21 @@
         </a>
 
         {{-- Meta --}}
-        <time class="block mt-2 text-sm text-gray-500">{{ Carbon\Carbon::create($post->created_at) }}</time>
+        <div class="flex items-center gap-2 mt-2">
+            {{-- Category --}}
+            <a href="{{ route('web.detail', ['slug' => $post->category()->slug]) }}" class="text-gray-500">
+                {{ $post->category()->title }}
+            </a>
+            
+            <span class="text-gray-300">&bull;</span>
+
+            {{-- Time --}}
+            <time class="text-sm text-gray-500">
+                {{ Carbon\Carbon::create($post->created_at) }}
+            </time>
+        </div>
         
-        {{-- Categories --}}
+        {{-- Tags --}}
         <div class="flex gap-2 mt-7">
             <a href="{{ route('web.detail', ['slug' => $post->category()->slug]) }}" class="inline-block px-3 py-1 text-gray-500 rounded-lg bg-slate-100 hover:bg-slate-200 hover:text-gray-700">
                 {{ $post->category()->title }}
