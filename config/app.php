@@ -179,6 +179,7 @@ return [
         /*
          * Services...
         */
+        App\Services\Admin\Providers\AdminServiceProvider::class,
         App\Services\Web\Providers\WebServiceProvider::class,
     ],
 
