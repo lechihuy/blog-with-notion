@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Domains\Category\Jobs;
+namespace App\Domains\Tag\Jobs;
 
-use App\Models\Category;
+use App\Models\Tag;
 use App\Foundation\Notion\NotionClient;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class FindCategoryByIdJob
+class FindTagByIdJob
 {
     use Dispatchable;
 
@@ -29,6 +29,6 @@ class FindCategoryByIdJob
     {
         $res = $client->page($this->id)->retrieve();
 
-        return new Category($res);
+        return new Tag($res);
     }
 }

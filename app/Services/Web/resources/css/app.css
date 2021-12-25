@@ -38,10 +38,15 @@ pre code.torchlight .summary-caret {
     @apply bg-slate-50 text-rose-500 py-0.5 px-1 rounded inline-block text-sm;
 }
 
+.prose-lg blockquote {
+    @apply text-gray-700 italic before:content-['“'] before:absolute relative pl-10 before:left-0 before:text-6xl
+}
+
 .prose-lg {
     @apply prose-a:text-sky-600 prose-a:underline
             prose-img:rounded-lg
             prose-pre:px-0
+            
 }
 
 @tailwind utilities;

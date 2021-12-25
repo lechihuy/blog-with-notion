@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use App\Domains\Tag\Jobs\FindTagByIdJob;
 use App\Foundation\Notion\Parser\Parser;
+use App\Domains\Tag\Jobs\SearchForTagJob;
 use App\Domains\Image\Jobs\CacheImageWithUrlJob;
 use App\Domains\Category\Jobs\FindCategoryByIdJob;
 use App\Operations\GetCachedPageHtmlContentOperation;
@@ -42,13 +44,24 @@ class Post extends Model
 
     public function category()
     {
-        return new Category(FindCategoryByIdJob::dispatchSync(
+        return FindCategoryByIdJob::dispatchSync(
             Arr::get($this->attributes, 'properties.category.relation.0.id')
-        ));
+        );
     }
 
     public function getContentAttribute()
     {
         return GetCachedPageHtmlContentOperation::dispatchSync($this->id);
+    }
+
+    public function tags()
+    {
+        $tagIds = Arr::pluck(
+            Arr::get($this->attributes, 'properties.tags.relation'), 'id'
+        );
+
+        return collect($tagIds)->map(function($tagId) {
+            return FindTagByIdJob::dispatchSync($tagId);
+        });
     }
 }

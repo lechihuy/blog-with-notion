@@ -878,6 +878,23 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   color: rgb(244 63 94 / var(--tw-text-opacity));
 }
 
+.prose-lg blockquote{
+  position: relative;
+  padding-left: 2.5rem;
+  font-style: italic;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.prose-lg blockquote::before{
+  position: absolute;
+  left: 0px;
+  font-size: 3.75rem;
+  line-height: 1;
+  --tw-content: '“';
+  content: var(--tw-content);
+}
+
 .prose-lg :is(:where(a):not(:where([class~="not-prose"] *))){
   --tw-text-opacity: 1;
   color: rgb(2 132 199 / var(--tw-text-opacity));
@@ -898,6 +915,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   position: fixed;
 }
 
+.absolute{
+  position: absolute;
+}
+
 .relative{
   position: relative;
 }
@@ -908,6 +929,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .right-0{
   right: 0px;
+}
+
+.top-10{
+  top: 2.5rem;
 }
 
 .z-0{
@@ -969,6 +994,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .mb-2{
   margin-bottom: 0.5rem;
+}
+
+.mt-10{
+  margin-top: 2.5rem;
 }
 
 .mt-7{
@@ -1063,6 +1092,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   width: 100%;
 }
 
+.w-96{
+  width: 24rem;
+}
+
 .max-w-full{
   max-width: 100%;
 }
@@ -1089,6 +1122,13 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.select-none{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .grid-cols-1{
@@ -1121,10 +1161,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 .gap-10{
   gap: 2.5rem;
-}
-
-.gap-4{
-  gap: 1rem;
 }
 
 .overflow-auto{
@@ -1209,12 +1245,16 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   padding: 1.5rem;
 }
 
+.p-7{
+  padding: 1.75rem;
+}
+
 .p-4{
   padding: 1rem;
 }
 
-.p-7{
-  padding: 1.75rem;
+.p-3{
+  padding: 0.75rem;
 }
 
 .px-4{
@@ -1257,6 +1297,16 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   padding-bottom: 2.5rem;
 }
 
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pt-8{
   padding-top: 2rem;
 }
@@ -1296,6 +1346,11 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   line-height: 1.75rem;
 }
 
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-4xl{
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1314,11 +1369,6 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
-}
-
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .font-medium{
@@ -1388,9 +1438,9 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.text-rose-700{
+.text-rose-500{
   --tw-text-opacity: 1;
-  color: rgb(190 18 60 / var(--tw-text-opacity));
+  color: rgb(244 63 94 / var(--tw-text-opacity));
 }
 
 .text-sky-500{
@@ -1398,9 +1448,9 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   color: rgb(14 165 233 / var(--tw-text-opacity));
 }
 
-.text-rose-500{
+.text-sky-600{
   --tw-text-opacity: 1;
-  color: rgb(244 63 94 / var(--tw-text-opacity));
+  color: rgb(2 132 199 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -1610,6 +1660,14 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
 
 @media (min-width: 768px){
 
+  .md\:relative{
+    position: relative;
+  }
+
+  .md\:top-0{
+    top: 0px;
+  }
+
   .md\:inline-block{
     display: inline-block;
   }
@@ -1622,8 +1680,24 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
     display: none;
   }
 
+  .md\:w-auto{
+    width: auto;
+  }
+
+  .md\:flex-none{
+    flex: none;
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:items-center{
+    align-items: center;
+  }
+
+  .md\:gap-10{
+    gap: 2.5rem;
   }
 
   .md\:rounded-lg{
@@ -1638,6 +1712,10 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
     border-left-width: 1px;
   }
 
+  .md\:bg-transparent{
+    background-color: transparent;
+  }
+
   .md\:p-7{
     padding: 1.75rem;
   }
@@ -1645,6 +1723,22 @@ pre code.torchlight .line-number, pre code.torchlight .summary-caret{
   .md\:px-4{
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .md\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .md\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:shadow-none{
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 

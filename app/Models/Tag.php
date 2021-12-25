@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Domains\Post\Jobs\SearchForPostJob;
 use App\Domains\Pagination\Jobs\MakeSimplePaginatorJob;
 
-class Category extends Model
+class Tag extends Model
 {
     protected $guarded = [];  
 
@@ -24,11 +24,6 @@ class Category extends Model
         return Arr::get($this->attributes, 'properties.title.title.0.plain_text');
     }
 
-    public function getDescriptionAttribute()
-    {
-        return Arr::get($this->attributes, 'properties.description.rich_text.0.plain_text');
-    }
-
     public function getCreatedAtAttribute()
     {
         return $this->attributes['created_time'];
@@ -40,7 +35,7 @@ class Category extends Model
             "filter" => [
                 "and" => [
                     ["property" => 'published', "checkbox" => ['equals' => true]],
-                    ["property" => 'category', "relation" => ['contains' => $this->id]],
+                    ["property" => 'tags', "relation" => ['contains' => $this->id]],
                 ],
             ],
         ]);

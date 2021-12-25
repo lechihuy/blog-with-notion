@@ -18,5 +18,10 @@ return [
             'id' => 'e59c4f37306c4920807b9f2a2c48cd8e',
             'model' => App\Models\Category::class,
         ],
+
+        'tags' => [
+            'id' => '04231367f28c41e5984f1309daa5fb3b',
+            'model' => App\Models\Tag::class,
+        ],
     ]
 ];

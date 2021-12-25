@@ -20,5 +20,8 @@
     </div>
 
     @include('web::layouts.footer')
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    @stack('scripts')
 </body>
 </html>
